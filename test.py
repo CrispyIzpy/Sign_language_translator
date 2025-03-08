@@ -10,7 +10,12 @@ class SignLanguageTranslatorApp:
         self.window = window
         self.window.title(window_title)
 
-        # Create a canvas to display the video feed
+        # Open the file in write mode to clear its contents
+        with open('PredictText.txt', 'w', encoding='utf-8'):
+            pass  # the file is cleared upon opening
+
+
+    # Create a canvas to display the video feed
         self.canvas = tk.Canvas(window, width=640, height=480)
         self.canvas.pack()
 
