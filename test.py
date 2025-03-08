@@ -94,7 +94,12 @@ class SignLanguageTranslatorApp:
 
                 if self.model:
                     prediction = self.model.predict([landmark_array])[0]
+                    # Open the file in append mode
+                    with open('PredictText.txt', 'a', encoding='utf-8') as file:
+                        # Append the character to the file
+                        file.write(prediction)
                     return prediction  # Return predicted letter
+
                 else:
                     return None
         return None
