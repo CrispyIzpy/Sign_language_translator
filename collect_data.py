@@ -51,6 +51,12 @@ while True:
                     print(f"Recording letter: {current_letter}")
                     data.append(landmark_array)
                     labels.append(current_letter)
+                    # Open the file in append mode
+                    with open('PredictText.txt', 'a', encoding='utf-8') as file:
+                    # Append the character to the file
+                        file.write(current_letter)
+
+
 
     # Display the frame
     cv2.imshow("ASL Data Collection", frame)
